@@ -11,7 +11,9 @@
         android:id="@+id/secondFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="16dip"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
 
         <!--<Button
             android:id="@+id/button_second"
@@ -66,7 +68,7 @@
             android:layout_marginTop="32dip"
             android:layout_marginEnd="160dip"
             android:justificationMode="inter_word"
-            android:text="@string/lorem_ipsum"
+            android:text="@string/lorem_ipsum1"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -124,5 +126,47 @@
             android:text="@string/la_data_di_oggi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+        <TextView
+            android:id="@+id/vettore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="38dip"
+            android:layout_marginEnd="168dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:text="@string/vettore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextView" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dip"
+            android:layout_marginEnd="36dip"
+            android:backgroundTint="@color/azzurro"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:text="@string/salva"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:ignore="MissingConstraints" />
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/multiAutoCompleteTextView"
+            android:layout_width="183dip"
+            android:layout_height="48dip"
+            android:layout_marginStart="36dip"
+            android:layout_marginTop="40dip"
+            android:minHeight="48dip"
+            android:text="@string/multiautocompletetextview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setcalendario"
+            tools:ignore="LabelFor" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

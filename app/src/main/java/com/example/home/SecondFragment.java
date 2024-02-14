@@ -25,6 +25,11 @@ import java.util.Date;
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
+    final int max=100;
+    String txt;
+    int gg;
+
+    String vet[];
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,7 +45,7 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        vet = new String[max];
         /*WebView web = binding.web;
         WebSettings webSettings = web.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -61,6 +66,24 @@ public class SecondFragment extends Fragment {
 
             binding.calendarView.setDate(millis);
             binding.textView4.setText("La data di oggi: "+sdf.format(new Date(millis)));
+
+        });
+        binding.button2.setOnClickListener(v -> {
+            Calendar calendar = Calendar.getInstance();
+            long millis = calendar.getTimeInMillis();
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+            txt = String.valueOf(binding.multiAutoCompleteTextView.getText());
+
+            String ok = String.valueOf(sdf.format(new Date(millis)));
+            int i = Integer.parseInt(ok.substring(0, 2));
+            vet[i]=txt;
+
+
+            binding.vettore.setText("Nota del giorno "+i+ " : "+vet[i]);
+            binding.multiAutoCompleteTextView.setText("");
+
+
         });
 
 

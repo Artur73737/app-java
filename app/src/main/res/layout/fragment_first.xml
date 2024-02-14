@@ -10,7 +10,7 @@
         android:id="@+id/firstFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="16dip">
 
         <Button
             android:id="@+id/button_first"
@@ -30,10 +30,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dip"
-            android:layout_marginTop="32dip"
+            android:layout_marginTop="68dp"
             android:layout_marginEnd="160dip"
             android:text="@string/che_cazzo_vuoi_sapere"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
