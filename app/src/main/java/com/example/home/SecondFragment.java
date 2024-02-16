@@ -12,6 +12,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -40,25 +41,33 @@ public class SecondFragment extends Fragment {
 
     }
 
+
     // Chiamato subito dopo che il layout del fragment è stato inflato
     @SuppressLint("SetJavaScriptEnabled")
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        vet = new String[max];
-        /*WebView web = binding.web;
-        WebSettings webSettings = web.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        web.setWebViewClient(new WebViewClient() {
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return false;
+        binding.seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                // Aggiorna la TextView con il nuovo valore del SeekBar
+                binding.textViewslidebar.setText("Valore: " + progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
 
-        web.loadUrl("https://youtube.com/");*/
+        vet = new String[max];
 
-        int a=binding.seekBar.getProgress();
+
         binding.setcalendario.setOnClickListener(v -> {
             Calendar calendar = Calendar.getInstance();
             long millis = calendar.getTimeInMillis();
@@ -68,19 +77,19 @@ public class SecondFragment extends Fragment {
             binding.textView4.setText("La data di oggi: "+sdf.format(new Date(millis)));
 
         });
+
         binding.button2.setOnClickListener(v -> {
-            Calendar calendar = Calendar.getInstance();
-            long millis = calendar.getTimeInMillis();
-            @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            //Calendar calendar = Calendar.getInstance();
+            //long millis = calendar.getTimeInMillis();
+            //@SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
             txt = String.valueOf(binding.multiAutoCompleteTextView.getText());
 
-            String ok = String.valueOf(sdf.format(new Date(millis)));
-            int i = Integer.parseInt(ok.substring(0, 2));
-            vet[i]=txt;
+            //String ok = String.valueOf(sdf.format(new Date(millis)));
+            //int i = Integer.parseInt(ok.substring(0, 2));
+            vet[binding.seekBar.getProgress()]=txt;
 
-
-            binding.vettore.setText("Nota del giorno "+i+ " : "+vet[i]);
+            binding.vettore.setText("Nota del giorno "+binding.seekBar.getProgress()+ " : "+vet[binding.seekBar.getProgress()]);
             binding.multiAutoCompleteTextView.setText("");
 
 
@@ -98,3 +107,15 @@ public class SecondFragment extends Fragment {
     }
 
 }
+
+/*WebView web = binding.web;
+        WebSettings webSettings = web.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        web.setWebViewClient(new WebViewClient() {
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return false;
+            }
+        });
+
+        web.loadUrl("https://youtube.com/");*/

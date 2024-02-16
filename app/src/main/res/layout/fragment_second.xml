@@ -79,21 +79,20 @@
             android:layout_width="250dip"
             android:layout_height="27dip"
             android:layout_marginStart="170dip"
-            android:layout_marginTop="32dip"
             android:layout_marginEnd="170dip"
             android:progressTint="@color/azzurro"
             android:thumbTint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewslidebar" />
 
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="13dip"
+            android:layout_marginStart="1dip"
             android:layout_marginTop="24dip"
-            android:layout_marginEnd="13dip"
+            android:layout_marginEnd="1dip"
             android:backgroundTint="@color/white"
             android:foregroundTint="@color/white"
             android:outlineAmbientShadowColor="@color/white"
@@ -131,9 +130,9 @@
             android:id="@+id/vettore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="168dp"
-            android:layout_marginTop="38dip"
-            android:layout_marginEnd="168dp"
+            android:layout_marginStart="168dip"
+            android:layout_marginTop="52dip"
+            android:layout_marginEnd="168dip"
             android:scrollbarAlwaysDrawHorizontalTrack="true"
             android:scrollbarAlwaysDrawVerticalTrack="true"
             android:text="@string/vettore"
@@ -145,8 +144,8 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dip"
-            android:layout_marginEnd="36dip"
+            android:layout_marginTop="52dip"
+            android:layout_marginEnd="32dip"
             android:backgroundTint="@color/azzurro"
             android:scrollbarAlwaysDrawHorizontalTrack="true"
             android:scrollbarAlwaysDrawVerticalTrack="true"
@@ -156,17 +155,34 @@
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             tools:ignore="MissingConstraints" />
 
-        <MultiAutoCompleteTextView
-            android:id="@+id/multiAutoCompleteTextView"
-            android:layout_width="183dip"
-            android:layout_height="48dip"
-            android:layout_marginStart="36dip"
-            android:layout_marginTop="40dip"
-            android:minHeight="48dip"
-            android:text="@string/multiautocompletetextview"
+        <TextView
+            android:id="@+id/textViewslidebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="168dip"
+            android:layout_marginTop="28dip"
+            android:layout_marginEnd="168dip"
+            android:layout_marginBottom="24dip"
+            app:layout_constraintBottom_toTopOf="@+id/seekBar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/setcalendario"
-            tools:ignore="LabelFor" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <EditText
+            android:id="@+id/multiAutoCompleteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dip"
+            android:layout_marginTop="44dip"
+            android:layout_marginEnd="2dip"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/nota"
+            android:inputType="textMultiLine"
+            android:minHeight="48dip"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setcalendario" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

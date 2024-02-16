@@ -87,4 +87,5 @@
     <string name="vettore">VETTORE</string>
     <string name="salva">salva</string>
     <string name="multiautocompletetextview">inserisci nota</string>
+    <string name="nota">"nota: "</string>
 </resources>

@@ -75,7 +75,7 @@
             android:cursorVisible="false"
             android:justificationMode="inter_word"
             android:scrollIndicators="right"
-            android:text="@string/lorem_ipsum"
+            android:text="@string/lorem_ipsum1"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textFontWeight="18"
