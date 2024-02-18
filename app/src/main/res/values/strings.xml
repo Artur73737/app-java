@@ -89,4 +89,6 @@
     <string name="multiautocompletetextview">inserisci nota</string>
     <string name="nota">"nota: "</string>
     <string name="prompt">"prompt: "</string>
+    <string name="attendi_la_risposta">attendi la risposta</string>
+    <string name="invia">INVIA</string>
 </resources>
