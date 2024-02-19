@@ -2,7 +2,7 @@
     <string name="app_name">HOME</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">CIAO</string>
+    <string name="first_fragment_label">GEMINI CHAT</string>
     <string name="second_fragment_label">PIPPONE</string>
     <string name="next">GIRA</string>
     <string name="num">inserisci giorno</string>

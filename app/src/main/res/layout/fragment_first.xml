@@ -10,6 +10,7 @@
         android:id="@+id/firstFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:forceDarkAllowed="false"
         android:padding="16dip">
 
         <Button
@@ -27,45 +28,6 @@
             app:layout_constraintTop_toBottomOf="@+id/geminiresponse" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="160dip"
-            android:layout_marginTop="68dp"
-            android:layout_marginEnd="160dip"
-            android:text="@string/che_cazzo_vuoi_sapere"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.48"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="166dip"
-            android:layout_height="24dip"
-            android:layout_marginStart="136dip"
-            android:layout_marginTop="27dip"
-            android:layout_marginEnd="136dip"
-            android:clickable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dip"
-            android:backgroundTint="@color/azzurro"
-            android:text="@string/aumenta"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-        <TextView
             android:id="@+id/geminiresponse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -73,10 +35,12 @@
             android:layout_marginTop="43dip"
             android:layout_marginEnd="175dip"
             android:autoText="false"
+            android:background="@drawable/radius"
             android:backgroundTint="@color/prova"
             android:cursorVisible="false"
             android:justificationMode="inter_word"
             android:keepScreenOn="false"
+            android:padding="15dip"
             android:scrollIndicators="right"
             android:text="@string/attendi_la_risposta"
             android:textAllCaps="false"
@@ -94,27 +58,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dip"
-            android:layout_marginTop="33dip"
+            android:layout_marginTop="24dip"
             android:layout_marginEnd="33dip"
             android:backgroundTint="@color/azzurro"
             android:text="@string/invia"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/geminiprompt"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <MultiAutoCompleteTextView
             android:id="@+id/geminiprompt"
-            android:layout_width="139dip"
-            android:layout_height="49dip"
+            android:layout_width="220dip"
+            android:layout_height="65dip"
             android:layout_marginStart="23dip"
-            android:layout_marginTop="30dip"
+            android:layout_marginTop="16dip"
             android:layout_marginEnd="16dip"
             android:hint="@string/prompt"
             android:minHeight="48dip"
             app:layout_constraintEnd_toStartOf="@+id/inviagemini"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -73,6 +73,7 @@ public class FirstFragment extends Fragment {
                     String resultText = result.getText();
                     handler.post(() -> {
                         binding.geminiresponse.setText(resultText);
+
                     });
                 }
 
@@ -90,13 +91,6 @@ public class FirstFragment extends Fragment {
 
 
 
-
-
-
-        binding.button.setOnClickListener(v -> {
-            conta+=2;
-            binding.progressBar.setProgress(conta);
-        });
 
 
         // Imposta un listener per il click del pulsante
