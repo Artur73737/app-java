@@ -2,7 +2,9 @@ HOME java app
 build whit gradle
 
 frist fragment
-![Screenshot_20240211-114620](https://github.com/Artur73737/app-java/assets/83822636/9cdc36de-5f51-4882-ae28-546922475b2a)
+![first](https://github.com/Artur73737/app-java/assets/83822636/0bfeb54d-cc28-4f6f-8127-0618ecab4bed)
+
 second fragment
-![pippone](https://github.com/Artur73737/app-java/assets/83822636/f39acd64-9c8a-47ed-b960-e331d97d2e72)
-![Screenshot_20240211-115006](https://github.com/Artur73737/app-java/assets/83822636/d2364f78-4471-4045-830a-f576ccb9549c)
+![Screenshot_20240220-194655](https://github.com/Artur73737/app-java/assets/83822636/5891d647-1f38-465b-a415-0e6d7d775485)
+
+![ultima](https://github.com/Artur73737/app-java/assets/83822636/4973b5a2-daee-4309-bcb3-d61fd4d5047c)
