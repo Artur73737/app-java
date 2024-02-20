@@ -36,7 +36,7 @@ public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
 
 
-    String key = "AIzaSyC6TNo0LqCSmtmviQb-XVtkpFxHJREemvk";
+    String key = "";
 
 
     @Override
