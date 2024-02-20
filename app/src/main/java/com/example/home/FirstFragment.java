@@ -36,9 +36,8 @@ public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
 
 
-    String key = "";
+    String key = "AIzaSyC6TNo0LqCSmtmviQb-XVtkpFxHJREemvk";
 
-    int conta=0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,7 +58,7 @@ public class FirstFragment extends Fragment {
         Executor executor = Executors.newSingleThreadExecutor();
 
         binding.inviagemini.setOnClickListener(v -> {
-            // For text-only input, use the gemini-pro model
+
             String prompt=String.valueOf(binding.geminiprompt.getText());
             Content content = new Content.Builder()
                     .addText(prompt)
