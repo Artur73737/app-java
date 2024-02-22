@@ -8,4 +8,5 @@
     <color name="blue">#161e22</color>
     <color name="blue_dark">#0d1114</color>
     <color name="red">#d23f3f</color>
+    <color name="trasparent">#00FFFFFF</color>
 </resources>

@@ -1,22 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.HOME" parent="Base.Theme.HOME">
-        <!-- Transparent system bars for edge-to-edge.
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>-->
-        <item name="android:background">@color/blue</item>
-        <item name="snackbarTextViewStyle">@color/white</item>
 
         <item name="windowActionBar">false</item>
         <item name="windowActionBarOverlay">false</item>
         <item name="android:windowIsFloating">false</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="windowNoTitle">true</item>
-
-
-
-
+        <item name="android:popupBackground">@color/trasparent</item>
 
     </style>
 </resources>
