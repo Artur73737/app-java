@@ -47,6 +47,7 @@
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textFontWeight="18"
+            android:textIsSelectable="true"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

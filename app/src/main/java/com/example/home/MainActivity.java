@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Imposta un listener per il click sul pulsante FAB (Floating Action Button)
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+       /* binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                     Snackbar.make(view, "sei molto blu", Snackbar.LENGTH_LONG)
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                             .setAction("Action", null).show();
 
             }
-        });
+        });*/
     }
 
     @Override

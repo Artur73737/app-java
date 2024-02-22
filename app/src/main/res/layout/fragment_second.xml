@@ -128,10 +128,12 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="70dip"
             android:layout_marginTop="40dip"
             android:layout_marginEnd="80dip"
             android:text="@string/la_data_di_oggi"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/setcalendario"
             app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
         <TextView
