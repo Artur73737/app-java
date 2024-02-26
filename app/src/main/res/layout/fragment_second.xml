@@ -141,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="168dip"
-            android:layout_marginTop="52dip"
+            android:layout_marginTop="24dip"
             android:layout_marginEnd="168dip"
             android:background="@drawable/radius"
             android:backgroundTint="@color/azzurro"
@@ -149,12 +149,14 @@
             android:scrollbarAlwaysDrawHorizontalTrack="true"
             android:scrollbarAlwaysDrawVerticalTrack="true"
             android:text="@string/vettore"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
         <Button
             android:id="@+id/button2"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dip"
@@ -165,6 +167,7 @@
             android:scrollbarAlwaysDrawHorizontalTrack="true"
             android:scrollbarAlwaysDrawVerticalTrack="true"
             android:text="@string/salva"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
@@ -198,6 +201,18 @@
             app:layout_constraintEnd_toStartOf="@+id/button2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/setcalendario" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="157dip"
+            android:layout_marginTop="22dip"
+            android:layout_marginEnd="157dip"
+            android:text="estrapola"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

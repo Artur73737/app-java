@@ -89,10 +89,14 @@ public class SecondFragment extends Fragment {
             //int i = Integer.parseInt(ok.substring(0, 2));
             vet[binding.seekBar.getProgress()]=txt;
 
-            binding.vettore.setText("Nota del giorno "+binding.seekBar.getProgress()+ " : "+vet[binding.seekBar.getProgress()]);
+
             binding.multiAutoCompleteTextView.setText("");
 
 
+        });
+
+        binding.button.setOnClickListener(v -> {
+            binding.vettore.setText("Nota del giorno "+binding.seekBar.getProgress()+ " : "+vet[binding.seekBar.getProgress()]);
         });
 
 

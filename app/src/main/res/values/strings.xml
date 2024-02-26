@@ -30,7 +30,7 @@
 
     <string name="data_di_oggi">data di oggi</string>
     <string name="la_data_di_oggi">La data di oggi:</string>
-    <string name="vettore">VETTORE</string>
+    <string name="vettore">Nota</string>
     <string name="salva">salva</string>
     <string name="multiautocompletetextview">inserisci nota</string>
     <string name="nota">"nota: "</string>
