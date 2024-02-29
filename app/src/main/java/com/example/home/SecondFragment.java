@@ -28,7 +28,7 @@ public class SecondFragment extends Fragment {
     private FragmentSecondBinding binding;
     final int max=100;
     String txt;
-    int gg;
+
 
     String vet[];
 
