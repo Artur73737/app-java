@@ -51,7 +51,7 @@ public class SecondFragment extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 // Aggiorna la TextView con il nuovo valore del SeekBar
-                binding.textViewslidebar.setText("Valore: " + progress);
+                binding.textViewslidebar.setText("Giorno: " + progress);
             }
 
             @Override
@@ -66,6 +66,7 @@ public class SecondFragment extends Fragment {
         });
 
         vet = new String[max];
+        binding.seekBar.setMax(31);
 
 
         binding.setcalendario.setOnClickListener(v -> {

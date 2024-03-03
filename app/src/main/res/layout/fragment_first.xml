@@ -40,7 +40,7 @@
             android:cursorVisible="false"
             android:justificationMode="inter_word"
             android:keepScreenOn="false"
-            android:padding="15dip"
+            android:padding="12dip"
             android:scrollIndicators="right"
             android:text="@string/attendi_la_risposta"
             android:textAllCaps="false"

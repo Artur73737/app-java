@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/radius"
     android:contentDescription="@string/app_name"
     tools:context=".SecondFragment">
 
@@ -70,6 +71,7 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/radius"
             android:backgroundTint="@color/prova"
+            android:editable="true"
             android:justificationMode="inter_word"
             android:padding="15dip"
             android:text="@string/lorem_ipsum1"
@@ -85,10 +87,12 @@
             android:layout_width="270dip"
             android:layout_height="27dip"
             android:layout_marginStart="170dip"
+            android:layout_marginTop="30dip"
             android:layout_marginEnd="170dip"
             android:progressTint="@color/azzurro"
             android:thumbTint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewslidebar" />
 
@@ -96,53 +100,57 @@
             android:id="@+id/calendarView"
             android:layout_width="480dip"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dip"
-            android:layout_marginTop="24dip"
-            android:layout_marginEnd="1dip"
+            android:layout_marginStart="15dip"
+            android:layout_marginTop="28dip"
+            android:layout_marginEnd="15dip"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.605"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <Button
             android:id="@+id/setcalendario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dip"
-            android:layout_marginTop="24dip"
+            android:layout_marginStart="30dip"
+            android:layout_marginTop="17dip"
+            android:layout_marginEnd="8dip"
             android:backgroundTint="@color/azzurro"
             android:padding="5dip"
             android:text="@string/data_di_oggi"
             android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70dip"
-            android:layout_marginTop="40dip"
-            android:layout_marginEnd="80dip"
+            android:layout_marginStart="8dip"
+            android:layout_marginTop="29dip"
+            android:layout_marginEnd="30dip"
             android:text="@string/la_data_di_oggi"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/setcalendario"
-            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
         <TextView
             android:id="@+id/vettore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="168dip"
-            android:layout_marginTop="24dip"
+            android:layout_marginTop="16dip"
             android:layout_marginEnd="168dip"
             android:background="@drawable/radius"
-            android:backgroundTint="@color/azzurro"
-            android:drawableTint="@color/azzurro"
-            android:padding="18dip"
+            android:backgroundTint="@color/prova"
+            android:padding="10dip"
             android:scrollbarAlwaysDrawHorizontalTrack="false"
             android:scrollbarAlwaysDrawVerticalTrack="false"
             android:text="@string/vettore"
             android:textColor="@color/black"
+            android:textIsSelectable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -151,8 +159,8 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dip"
-            android:layout_marginEnd="32dip"
+            android:layout_marginTop="61dip"
+            android:layout_marginEnd="40dip"
             android:backgroundTint="@color/azzurro"
             android:padding="10dip"
             android:scrollbarAlwaysDrawHorizontalTrack="false"
@@ -162,19 +170,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/textViewslidebar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="168dip"
-            android:layout_marginTop="28dip"
-            android:layout_marginEnd="168dip"
-            android:layout_marginBottom="24dip"
-            app:layout_constraintBottom_toTopOf="@+id/seekBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <EditText
             android:id="@+id/multiAutoCompleteTextView"
@@ -205,6 +200,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextView" />
+
+        <TextView
+            android:id="@+id/textViewslidebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="172dip"
+            android:layout_marginTop="28dip"
+            android:layout_marginEnd="172dip"
+            android:background="@drawable/radius"
+            android:backgroundTint="@color/viola"
+            android:padding="5dip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
