@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>chat 🍕🍕🍕</title>
+    <style>
+        body {
+            background-image: url('a.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        .chat {
+            width: 80%;
+            max-width: 1600px;
+            height: calc(100vh - 120px);            
+            background-color: rgba(0, 0, 0, 0.5); 
+            overflow-y: auto;
+           /* margin-top: 50px;*/
+            margin-bottom: 20px;
+            margin-top: 30px;
+            backdrop-filter: blur(5px); 
+            border-radius: 20px;
+            scroll-behavior: smooth;
+            color: white;
+        }
+        .chat::-webkit-scrollbar {
+            width: 12px; 
+            height: 8px;
+        }
+
+        .chat::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1); 
+        }
+
+        .chat::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.3); 
+            border-radius: 4px; 
+        }
+
+        .chat::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+        .message {
+            
+            padding: 10px;
+            margin-bottom: 5px;
+            
+            
+        }
+
+        .input-box {
+            width: 100%; 
+            padding: 10px;
+            display: flex;
+            justify-content: center; 
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            position: fixed; 
+            bottom: 0; 
+            border: none; 
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            background-color: rgba(51, 51, 51, 0.5); 
+            backdrop-filter: blur(5px); 
+            border: 1px solid #1251b8;
+            /*background-color: #1251b8;*/
+            border-radius: 4px;
+            width: 250px;
+        }
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            background-color: rgba(51, 51, 51, 0.5); 
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+            border: 1px solid #1251b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat" id="chatBox"></div>
+    <div class="input-box">
+        <input type="text" id="messageInput" placeholder="Inserisci un messaggio" onkeydown="handleKeyPress(event)">
+        <button onclick="sendMessage()">Invia</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var messageInput = document.getElementById('messageInput');
+            var message = messageInput.value.trim();
+            if (message !== '') {
+                var chatBox = document.getElementById('chatBox');
+
+                var messageElement = document.createElement('div');
+                var response = requestGemini(message)
+                messageElement.textContent = "tu:  " + message + "\n\n GEMINI: " + response;
+
+                messageElement.classList.add('message');
+                chatBox.appendChild(messageElement);
+                messageInput.value = '';
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.keyCode === 13) { 
+                sendMessage();
+            }
+        }
+
+        async function requestGemini(prompt){
+            var s = "http://192.168.1.180:8080/chatgpt?prompt=" + prompt
+            let response;
+            while (!response) {
+                try {
+                    response = await fetch(s);
+                    if (!response.ok) {
+                        throw new Error('Errore di rete');
+                    }
+                } catch (error) {
+                    console.error('Errore nella richiesta:', error);
+                    // Attendi prima di tentare di nuovo
+                    await new Promise(resolve => setTimeout(resolve, 1000)); // Attendi 1 secondo prima di ritentare
+                }
+            }
+    
+            const data = await response.text();
+            // Elaborare i dati ricevuti
+            return data
+        }
+    </script>
+</body>
+</html>
