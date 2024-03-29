@@ -215,5 +215,50 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
+        <TextView
+            android:id="@+id/textViewrequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dip"
+            android:layout_marginTop="40dip"
+            android:layout_marginEnd="2dip"
+            android:background="@drawable/radius"
+            android:backgroundTint="@color/azzurro"
+            android:padding="10dip"
+            android:text="response"
+            android:textIsSelectable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonrichiedi" />
+
+        <Button
+            android:id="@+id/buttonrichiedi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dip"
+            android:layout_marginTop="97dip"
+            android:layout_marginEnd="10dip"
+            android:text="RICHIEDI"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView77"
+            app:layout_constraintTop_toBottomOf="@+id/vettore" />
+
+        <TextView
+            android:id="@+id/textView77"
+            android:layout_width="255dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="10dip"
+            android:layout_marginTop="100dip"
+            android:layout_marginEnd="10dip"
+            android:background="@drawable/radius"
+            android:backgroundTint="#3F51B5"
+            android:editable="true"
+            android:padding="10dip"
+            android:text="@string/prompt"
+            android:textIsSelectable="true"
+            app:layout_constraintEnd_toStartOf="@+id/buttonrichiedi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vettore" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

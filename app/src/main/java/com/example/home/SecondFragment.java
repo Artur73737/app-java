@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,24 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import com.example.home.databinding.FragmentSecondBinding;
+
+
+import java.io.IOException;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -22,6 +41,16 @@ import com.example.home.databinding.FragmentSecondBinding;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import kotlinx.coroutines.CoroutineScope;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class SecondFragment extends Fragment {
 
@@ -46,7 +75,7 @@ public class SecondFragment extends Fragment {
     @SuppressLint("SetJavaScriptEnabled")
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        String serverResponse = "";
         binding.seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -79,6 +108,14 @@ public class SecondFragment extends Fragment {
 
         });
 
+
+        binding.buttonrichiedi.setOnClickListener(v -> {
+            String url = "http://192.168.1.180:8080/chatgpt?prompt=";
+            url = url + String.valueOf(binding.textView77.getText());
+            binding.textView77.setText("");
+            makeHttpRequest(url);
+        });
+
         binding.button2.setOnClickListener(v -> {
             //Calendar calendar = Calendar.getInstance();
             //long millis = calendar.getTimeInMillis();
@@ -101,6 +138,23 @@ public class SecondFragment extends Fragment {
         });
 
 
+    }
+    private void makeHttpRequest(String url) {
+        new Thread(() -> {
+            try {
+                OkHttpClient client = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .url(url)
+                        .build();
+
+                Response response = client.newCall(request).execute();
+                String serverResponse = response.body() != null ? response.body().string() : "";
+
+                requireActivity().runOnUiThread(() -> binding.textViewrequest.setText(serverResponse));
+            } catch (IOException e) {
+                requireActivity().runOnUiThread(() -> binding.textViewrequest.setText("Errore: " + e.getMessage()));
+            }
+        }).start();
     }
 
     // Chiamato quando la vista del fragment viene distrutta
